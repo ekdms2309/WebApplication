@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3 선택자</title>
+    <style>
+        /*전체선택*/
+        * {
+            /* color: red;*/
+            background-color: beige;
+        }
+
+        /*태그선택*/
+        h1 {
+            /*            color: red;
+            text-align: center;*/
+        }
+
+
+        p {
+            /*            color: blue;
+            line-height: 32px;*/
+        }
+
+        /*중복선택*/
+        h1,
+        p,
+        div,
+        body {
+            /*            background-color: aquamarine;*/
+        }
+
+        /*id 선택자*/
+        #header {
+            background-color: aqua;
+            margin: 0 auto;
+            /*0: 상하 auto: 좌우*/
+            /*div영역(블럭)은 text-align이 적용되지 않음, 따라서 margin으로 사용해야함!!!!!*/
+            width: 500px;
+        }
+
+        #wrap {
+            background-color: yellow;
+            padding: 20px;
+            margin: 0 auto;
+            width: 500px;
+        }
+
+        #content {
+            background-color: antiquewhite;
+            margin-bottom: 50px;
+        }
+
+        #aside {
+            background-color: aquamarine;
+        }
+
+        #footer {
+            background-color: brown;
+        }
+
+        /*class선택자*/
+        .select {
+            color: red;
+        }
+
+        .text_bold {
+            font-weight: bold;
+        }
+
+        .text_itelic {
+            font-style: italic;
+        }
+
+        li.text_bold {
+            background-color: yellow;
+        }
+
+        /*속성 선택자*/
+        input[type=text] {
+            background-color: blueviolet;
+            /*테두리의 두께, 모양, 컬러*/
+            border: 5px solid #AAAAAA;
+        }
+
+        input[type="password"] {
+            background-color: black;
+            border: 5px solid blue;
+        }
+
+        input[type=checkbox] {
+            width: 30px;
+            height: 30px;
+        }
+
+        input[type=button] {
+            padding: 10px 30px;
+            /*상, 하*/
+            /*감싸고 있는 요소의 안쪽을 조정*/
+            font-weight: 900;
+            background-color: darkolivegreen;
+            border: 1px solid #AAAAAA;
+            color: #FFFFFF;
+        }
+
+        #header h1 {
+            color: red;
+        }
+
+        #content h1 {
+            color: blue;
+        }
+
+        #header>h1 {
+            background-color: black;
+        }
+
+        #content>h1 {
+            background-color: black;
+        }
+
+        table>tr>th {
+            color: red;
+        }
+
+        /*동위 선택지*/
+        h1+h2 {
+            color: orange;
+        }
+
+        h1~h2 {
+            background-color: aqua
+        }
+
+        /*반응선택자*/
+        h1:hover {
+            color: darkred;
+            background-color: forestgreen;
+        }
+
+        h1+h2:hover {
+            color: #000000;
+            background-color: orange;
+        }
+
+        h1~h2:active {
+            color: red;
+            background-color: aqua;
+        }
+
+        input:disabled {
+            background-color: black;
+        }
+
+        input:focus {
+            background-color: red;
+        }
+
+        #menu {
+            display: none;
+        }
+        
+        input[type=checkbox] {
+            display: none;
+        }
+
+
+        input[type=checkbox]:checked+#menu {
+            display: block;
+             background-color: gray;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        label:hover {
+           background-color: gray;
+        }
+        
+        ul#colorful{overflow: hidden;}
+        ul#colorful li{list-style: none;
+            float: left; padding: 15px;}
+        ul#colorful li:first-child{border-radius: 10px 0 0 10px;}
+        ul#colorful li:last-child{border-radius: 0 10px 10px 0;}
+        ul#colorful li:nth-child(2n){background-color: chartreuse;}
+        ul#colorful li:nth-child(2n+1){background-color: darkmagenta;}
+        
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;           
+        }
+        
+        #gnb{
+            list-style: none;
+            overflow: hidden;
+            /*float속성을 gnb안에서만 쓴다는 뜻*/
+        }
+        #gnb>li{
+            float: left;
+            padding: 5px 15px;
+            border: 1px solid #DDDDDD;
+            margin-left: -1px;
+        }
+        
+        #gnb>li:first-child{
+            border-radius: 10px 0 0 10px;
+        }
+        #gnb>li:last-child{
+            border-radius: 0 10px 10px 0;
+        }
+        #gnb>li:nth-child(2n){
+            background-color: aquamarine;
+        }
+        #gnb>li:nth-child(2n+1){
+            background-color: antiquewhite;
+        }
+        #gnb>li:hover{
+            background-color: dodgerblue;
+            color: azure;
+        }
+        a{
+            text-decoration: none;
+            display: block;
+        }
+        a:hover{
+            background-color: dodgerblue;
+            color: azure;
+        }
+        a:visited{color: black;}
+    </style>
+</head>
+
+<body>
+    
+    <img src="Black.jpg"><br><br>
+
+    <input> <br>
+    <input disabled>
+    <label for="chk">메뉴</label>
+    <input type="checkbox" id="chk">
+    <div id="menu">
+        <ul>
+            <li>홈</li>
+            <li>회사소개</li>
+            <li>서비스소개</li>
+            <li>오시는길</li>
+        </ul>
+    </div>
+
+    <h1>Header - 1</h1>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2>
+    <h2>Header - 2</h2>
+
+    <table border="1">
+        <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <th>지역</th>
+        </tr>
+    </table>
+
+    <div id="header">
+        <h1>타이틀</h1>
+        <div>
+            <h1>타이틀2</h1>
+        </div>
+    </div>
+
+    <div id="content">
+        <h1>타이틀3</h1>
+        <p>내용</p>
+    </div>
+
+    <input type="text"><br>
+    <input type="password"><br>
+    <input type="button" value="버튼"><br>
+    <input type="checkbox">
+    
+    <ul id="colorful">
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+        <li>Fourth</li>
+        <li>Fifth</li>
+        <li>Sixth</li>
+        <li>Seventh</li>
+    </ul>
+    
+    <ul id="gnb">
+        <li><a href="http://www.naver.com">menu-01</a></li>
+        <li>menu-02</li>
+        <li>menu-03</li>
+        <li>menu-04</li>
+        <li>menu-05</li>
+    </ul>
+
+    <!--    <ul>
+        <li class="select text_bold">사과</li>
+        <li>바나나</li>
+        <li class="select text_itelic">수박</li>
+        <li class="text_bold">메론</li>
+    </ul>-->
+
+
+    <!--<div id="header">
+    Header 영역
+</div>
+
+<div id="wrap">
+    <div id="content"> Content영역</div>
+    <div id="aside"> Aside 영역</div>
+</div>
+<div id="footer"> Footer 영역</div>-->
+
+    <!--<h1>제목 글자 태그</h1>
+<p>
+    네이버는 동영상 기술 플랫폼의 정교화를 위해 네이버TV, 브이라이브, 뉴스 등 다양한 서비스 안에서 개별적으로 운영되던 동영상 메타데이터를 통합 관리, 운영할 수 있는 백엔드 시스템을 새롭게 구축하고, 동영상을 재생할 때 로딩되는 시간을 50~60% 단축시킨 ‘Ultra-Fast Playing’ 기술을 개발했다.
+</p>
+<div>
+    DIV 블럭 영역
+</div>-->
+</body></html>
