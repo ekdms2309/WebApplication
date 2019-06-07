@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS_Review</title>
+<style> 
+    /*모든 태그 적용: * */
+    *{color: red}
+    
+    /*여러 선택지 입력 -> 스타일 속성 적용: ,로 연결*/
+    body,p,h1{margin: 0; padding: 0;}
+    
+    /*아이디 선택자: # */
+    /*아이디 속성 중복되면 -> 자바스크립트에서 문제 발생!*/
+    #header {background-color: pink}
+    #wrap {background-color: hotpink}
+    #aside {background-color: deeppink}
+    #content {background-color: yellow}
+    
+    /*클래스 선택자: . */
+    /*공백으로 구분, 여러개 사용 가능, 속성 중복 가능*/
+    .select{background-color: aquamarine}
+    li.select{color: dodgerblue}
+    
+    /*속성 선택자: 선택자[속성], 선택자[속성=값]*/
+    input[type=text]{background-color: dodgerblue}
+    input[type=password]{background-color: darkcyan}
+    
+    /*후손(밑에 속해있는 전체) 선택자: 선택자A 선택자B*/
+    #header1 h1{color: blue}
+    #section h1{color: purple}
+    
+    /*자손(바로 밑 속해있는 것) 선택자: 선택자A>선택자B*/
+    #header1>h1{background-color: aqua}
+    #section>h1{background-color: aquamarine}
+    
+    /*동위선택자: 동위관계에서 뒤에 위치한 태그 선택*/
+    /*선택자A+선택자B: 선택자A 바로 뒤에 있는 선택자B*/
+    #listh1+h2{color: coral}
+    /*선택자A~선택자B: 선택자A 뒤에 위치하는 선택자B*/
+    h1~h2{background-color: lightyellow}
+    
+    /*반응 선택자: 사용자의 반응 -> 특정한 상태 선택*/
+    /* :active (클릭한 태그 선택)*/
+    h1:active{background-color: black}
+    /* :hover (커서를 올린 태그 선택) */
+    h1:hover{color: rebeccapurple}
+    
+    /*상태 선택자: 입력 양식의 상태를 선택할 때 사용*/
+    /* :checked (체크상태의 input 태그 선택) */
+    input[type=checkbox]:checked+div{height: 0px}
+    div{overflow: hidden; width: 100%; height: 100%;}
+    /* :focus (초점이 맞추어진 input 태그 선택) */
+    input:focus{background-color: dimgray}
+    /* :enabled (사용 가능한 input 태그 선택) */
+    input:enabled{background-color: yellowgreen}
+    /* :disabled (사용 불가능한 input 태그 선택) */
+    input:disabled{background-color: green}
+    
+    /*구조 선택자: 특정한 위치에 있는 태그를 선택*/
+    #snake{overflow: hidden;}
+    #snake li{
+        list-style: none;
+        float: left; padding: 15px;
+        }
+    /* :first-child (첫번째) */
+    #snake li:first-child{border-radius: 10px 0 0 10px;}
+    /* :last-child (마지막) */
+    #snake li:last-child{border-radius: 0 10px 10px 0;}
+    /* :nth-child (앞에서 수열번째로 등장) */
+    #snake li:nth-child(2n){background-color: green}
+    /* :nth-last-child (뒤에서 수열번째로 등장) */
+    #snake li:nth-child(2n+1){background-color: yellow}
+    
+    #snake li:hover{
+        background-color: pink;
+        color: deeppink;
+    }
+    
+    a{
+        text-decoration: none;
+        display: block;
+    }
+    a:hover{background-color: black;
+    color: white}
+    a:visited{color: gray;}
+    img{
+        width: 300px;
+        height: 300px;
+        border-radius: 150px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+</style>
+</head>
+    
+<body>
+    <h1>hahaha</h1>
+    <p>texttexttext</p><hr>
+    
+    <div id="header">
+        <h1>Header</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside">
+        <h1>Aside</h1>
+        </div>
+        <div id="content">
+        <h1>Content</h1>
+        </div>
+    </div><hr>
+    
+    <br><h1 class="select">List</h1>
+    <ul>
+        <li class="select">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul><hr>
+    
+    <form>
+        <input type="text"><br>
+        <input type="password">
+    </form><hr>
+    
+    <div id="header1">
+        <h1 class="title">list2</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+        <div id="section">
+            <h1 class="title">list3</h1>
+            <p>lolllolloloo</p> <hr>
+        </div>
+    </div>
+    
+    <h1 id="listh1">Header - 1</h1> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2> 
+    <h2>Header - 2</h2><hr>
+    
+    <h1>User Action Selector</h1><hr>
+    
+    <h2>Enabled</h2>
+    <input>
+    <h2>Disabled</h2>
+    <input disabled="disabled">
+    <h2>focus</h2>
+    <input type="text">
+    <h2>checkbox</h2>
+    <input type="checkbox">
+    <div>할롱!</div><hr>
+    
+    <ul id="snake">
+    <li><a href="http://www.naver.com">First</a></li>
+    <li>Second</li>
+    <li>Third</li>
+    <li>Fourth</li>
+    <li>Fifth</li>
+    <li>Sixth</li>
+    <li>Seventh</li>
+    </ul><hr>
+    
+    <img src="1.jpg">
+    
+    
+</body>
+</html>
