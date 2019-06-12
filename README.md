@@ -1,4 +1,4 @@
-# Mini projects by using HTML and CSS
+# Mini projects by using HTML and CSS (ghpage)
 ------------------------------------------
 ### 1. button
 - link (https://idaeun.github.io/HTML-CSS3/button/button.html#)
