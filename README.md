@@ -1,4 +1,4 @@
-# Mini projects by using HTML and CSS (ghpage)
+# Mini projects by using HTML and CSS
 ------------------------------------------
 ### 1. button
 ![](button.gif)
