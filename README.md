@@ -1,9 +1,12 @@
 # Mini projects by using HTML and CSS
 ------------------------------------------
 ### 1. button
+<<<<<<< HEAD
 - link (https://idaeun.github.io/HTML-CSS3/button/button.html#)
 - code (https://github.com/iDaeun/HTML-CSS3/blob/master/button/button.html)
 
+=======
+>>>>>>> gh-pages
 ![](button.gif)
 - link: (https://idaeun.github.io/HTML-CSS3/button/button.html)
 - code: (https://github.com/iDaeun/HTML-CSS3/blob/master/button/button.html)
